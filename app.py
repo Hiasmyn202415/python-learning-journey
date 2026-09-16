@@ -1,243 +1,174 @@
-﻿from flask import Flask
-app = Flask(__name__)
-
-# ========== HOME PAGE ==========
-@app.route("/")
-def home():
-    return """
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-      * { font-family: 'Chakra Petch', sans-serif; }
-      body { background-color: #f0f4ff; }
-    </style>
-
-    <div class="container py-4">
-      <h1 class="text-center text-primary display-4">Understanding Programming in Simple Words</h1>
-      <hr class="my-4">
-
-      <div class="card p-4 shadow-sm mb-4">
-        <p class="lead">I am a beginner programmer studying to become a Backend Developer. Through this website, I explain basic programming concepts in simple language!</p>
-        <p>Many people think programming requires advanced math or being a genius — but it's actually about logic, practice, and patience! Anyone can learn!</p>
-      </div>
-
-      <h4 class="text-dark mb-3">📚 Concepts:</h4>
-      <ul class="list-group mb-4">
-        <li class="list-group-item"><a href="/programming-logic" class="text-decoration-none">🧠 Programming Logic</a></li>
-        <li class="list-group-item"><a href="/variables" class="text-decoration-none">📦 Variables</a></li>
-        <li class="list-group-item"><a href="/functions" class="text-decoration-none">⚙️ Functions</a></li>
-        <li class="list-group-item"><a href="/oop" class="text-decoration-none">🧍 OOP — Object-Oriented Programming</a></li>
-        <li class="list-group-item"><a href="/database" class="text-decoration-none">💾 Database</a></li>
-        <li class="list-group-item"><a href="/framework" class="text-decoration-none">🛠️ Framework</a></li>
-      </ul>
-    </div>
-    """
-
-# ========== PROGRAMMING LOGIC ==========
-@app.route("/programming-logic")
-def programming_logic():
-    return """
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-      * { font-family: 'Chakra Petch', sans-serif; }
-      body { background-color: #f0f4ff; }
-    </style>
-
-    <div class="container py-4">
-      <h1 class="text-center text-primary display-4">Programming Logic</h1>
-      <hr class="my-4">
-      <div class="card p-4 shadow-sm mb-4">
-        <p class="lead">Logic is the way we think and organize steps to solve a problem. It's like giving very clear instructions to a computer!</p>
-        <p>Just like following a recipe step-by-step: you tell the computer WHAT to do, IN WHICH ORDER, and UNDER WHICH CONDITIONS.</p>
-      </div>
-      <h5>Example:</h5>
-      <pre class="bg-light p-3 rounded border">
-if age >= 18:
-    print("You are an adult!")
-else:
-    print("You are underage!")
-      </pre>
-      <br>
-      <a href="/" class="btn btn-primary">Go Back</a>
-    </div>
-    """
-
-# ========== VARIABLES ==========
-@app.route("/variables")
-def variables():
-    return """
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-      * { font-family: 'Chakra Petch', sans-serif; }
-      body { background-color: #f0f4ff; }
-    </style>
-
-    <div class="container py-4">
-      <h1 class="text-center text-primary display-4">Variables</h1>
-      <hr class="my-4">
-      <div class="card p-4 shadow-sm mb-4">
-        <p class="lead">A variable is like a BOX where you store information! It can hold names, numbers, text — anything!</p>
-        <p>You give it a name, put something inside, and use that name whenever you need the information later.</p>
-      </div>
-      <h5>Example:</h5>
-      <pre class="bg-light p-3 rounded border">
-name = "Alice"
-age = 17
-height = 1.65
-print(f"My name is {name}, I'm {age} years old!")
-      </pre>
-      <br>
-      <a href="/" class="btn btn-primary">Go Back</a>
-    </div>
-    """
-
-# ========== FUNCTIONS ==========
-@app.route("/functions")
-def functions():
-    return """
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-      * { font-family: 'Chakra Petch', sans-serif; }
-      body { background-color: #f0f4ff; }
-    </style>
-
-    <div class="container py-4">
-      <h1 class="text-center text-primary display-4">Functions</h1>
-      <hr class="my-4">
-      <div class="card p-4 shadow-sm mb-4">
-        <p class="lead">A Function is a block of code that does ONE specific job. You write it ONCE and use it MANY times!</p>
-        <p>Think of it like a machine: you put something IN, it does the work, and gives you something BACK.</p>
-      </div>
-      <h5>Example:</h5>
-      <pre class="bg-light p-3 rounded border">
-def greet(name):
-    return f"Hello, {name}!"
-
-print(greet("Alice"))
-print(greet("Bob"))
-      </pre>
-      <br>
-      <a href="/" class="btn btn-primary">Go Back</a>
-    </div>
-    """
-
-# ========== OOP ==========
-@app.route("/oop")
-def oop():
-    return """
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-      * { font-family: 'Chakra Petch', sans-serif; }
-      body { background-color: #f0f4ff; }
-    </style>
-
-    <div class="container py-4">
-      <h1 class="text-center text-primary display-4">OOP — Object-Oriented Programming</h1>
-      <hr class="my-4">
-      <div class="card p-4 shadow-sm mb-4">
-        <p class="lead">OOP organizes code into "Objects" that represent real things! Like a blueprint to create houses!</p>
-        <p>A <strong>Class</strong> is the blueprint. An <strong>Object</strong> is the actual house built from that blueprint.</p>
-      </div>
-      <h5>Example:</h5>
-      <pre class="bg-light p-3 rounded border">
-class Person:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-
-me = Person("Alice", 17)
-print(f"My name is {me.name}")
-      </pre>
-      <br>
-      <a href="/" class="btn btn-primary">Go Back</a>
-    </div>
-    """
-
-# ========== DATABASE ==========
-@app.route("/database")
-def database():
-    return """
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-      * { font-family: 'Chakra Petch', sans-serif; }
-      body { background-color: #f0f4ff; }
-    </style>
-
-    <div class="container py-4">
-      <h1 class="text-center text-primary display-4">Database</h1>
-      <hr class="my-4">
-      <div class="card p-4 shadow-sm mb-4">
-        <p class="lead">A Database is an organized place to store information permanently. Like a digital filing cabinet!</p>
-        <p>Databases let you: <strong>Create</strong> → <strong>Read</strong> → <strong>Update</strong> → <strong>Delete</strong> information easily.</p>
-      </div>
-      <h5>Example (SQL):</h5>
-      <pre class="bg-light p-3 rounded border">
-CREATE TABLE users (
-    name TEXT,
-    age INTEGER
-);
-
-INSERT INTO users VALUES ("Alice", 17);
-SELECT * FROM users;
-      </pre>
-      <br>
-      <a href="/" class="btn btn-primary">Go Back</a>
-    </div>
-    """
-
-# ========== FRAMEWORK ==========
-@app.route("/framework")
-def framework():
-    return """
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-      * { font-family: 'Chakra Petch', sans-serif; }
-      body { background-color: #f0f4ff; }
-    </style>
-
-    <div class="container py-4">
-      <h1 class="text-center text-primary display-4">Framework</h1>
-      <hr class="my-4">
-      <div class="card p-4 shadow-sm mb-4">
-        <p class="lead">A Framework is a set of ready-made tools that help you build things faster! It gives you a solid foundation so you don't have to start from zero!</p>
-        <p><strong>Flask</strong> is a Python framework specifically made for creating websites easily!</p>
-      </div>
-      <h5>Example — This very website:</h5>
-      <pre class="bg-light p-3 rounded border">
 from flask import Flask
 app = Flask(__name__)
 
+# ========== PÁGINA INICIAL ==========
 @app.route("/")
 def home():
-    return "Hello World!"
+    return """
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+     * { font-family: 'Chakra Petch', sans-serif; }
+     body { background-color: #f0f4ff; }
+    </style>
 
-if __name__ == "__main__":
-    app.run()
-      </pre>
-      <br>
-      <a href="/" class="btn btn-primary">Go Back</a>
+    <div class="container py-4">
+
+    <!-- MENU DE NAVEGAÇÃO -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light rounded mb-4">
+      <div class="container-fluid">
+        <a class="nav-link d-inline me-3" href="/about">👤 About Me</a>
+        <a class="nav-link d-inline" href="/projects">💻 My Projects</a>
+      </div>
+    </nav>
+
+    <h1 class="text-center text-primary display-4">Understanding Programming in Simple Words</h1>
+    <hr class="my-4">
+
+    <div class="card p-4 shadow-sm mb-4">
+    <p class="lead">I am a beginner in programming, studying to become a Backend Developer. Through this website, I explain basic concepts and clarify common doubts... let's go!</p>
+    <p>Many people believe programming requires advanced English and complex math. But that's NOT true! Programming is about LOGIC, just like following a recipe step-by-step.</p>
+    <p>Anyone can learn! You just need patience, practice, and consistency. Here I share my learning journey from zero to backend!</p>
+    </div>
+
+    <div class="card p-4 shadow-sm mb-4">
+    <h3 class="text-secondary">🔹 Variables</h3>
+    <p>Think of a variable like a BOX where you store information. It can hold text, numbers, or anything!</p>
+    <pre class="bg-light p-3 rounded">name = "Maria"
+age = 17</pre>
+    </div>
+
+    <div class="card p-4 shadow-sm mb-4">
+    <h3 class="text-secondary">🔹 Functions</h3>
+    <p>A function is a block of code that does something specific. You create it once and use it many times!</p>
+    <pre class="bg-light p-3 rounded">def greet():
+    return "Hello, welcome!"</pre>
+    </div>
+
+    <div class="card p-4 shadow-sm mb-4">
+    <h3 class="text-secondary">🔹 Conditionals (If / Else)</h3>
+    <p>Your program makes decisions! IF something is true → do this. ELSE → do that.</p>
+    <pre class="bg-light p-3 rounded">age = 17
+if age >= 18:
+    print("You are an adult!")
+else:
+    print("You are underage!")</pre>
+    </div>
+
+    <div class="card p-4 shadow-sm mb-4">
+    <h3 class="text-secondary">🔹 Loops (For / While)</h3>
+    <p>Repeat actions automatically! No need to write the same code 100 times!</p>
+    <pre class="bg-light p-3 rounded">for number in [1, 2, 3, 4, 5]:
+    print(number)</pre>
+    </div>
+
+    <div class="card p-4 shadow-sm mb-4">
+    <h3 class="text-secondary">🔹 Object-Oriented Programming (OOP)</h3>
+    <p>Think of a CLASS like a "blueprint" or "template". From one blueprint, you can create many objects!</p>
+    <pre class="bg-light p-3 rounded">class Person:
+    def __init__(self, name):
+        self.name = name
+
+me = Person("Hiasmyn")
+print(me.name)</pre>
+    </div>
+
+    <div class="card p-4 shadow-sm mb-4">
+    <h3 class="text-secondary">🔹 Databases (SQL)</h3>
+    <p>Where you store data permanently! Like a giant organized notebook. We use SQL to ask questions and get information.</p>
+    <pre class="bg-light p-3 rounded">SELECT * FROM users;</pre>
+    </div>
+
+    <hr class="my-4">
+    <div class="text-center">
+    <p class="text-muted">🚀 Created by Hiasmyn — Learning Backend Development, one step at a time!</p>
+    </div>
+    </div>
+    """
+
+# ========== PÁGINA SOBRE MIM ==========
+@app.route("/about")
+def about():
+    return """
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+     * { font-family: 'Chakra Petch', sans-serif; }
+     body { background-color: #f0f4ff; }
+    </style>
+
+    <div class="container py-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light rounded mb-4">
+      <div class="container-fluid">
+        <a class="nav-link d-inline me-3" href="/">🏠 Home</a>
+        <a class="nav-link d-inline" href="/projects">💻 My Projects</a>
+      </div>
+    </nav>
+
+    <h1 class="text-center text-primary display-4">About Me</h1>
+    <hr class="my-4">
+
+    <div class="card p-4 shadow-sm mb-4">
+    <p class="lead">Hi! I'm Hiasmyn! 👋</p>
+    <p>I'm 17 years old and I'm on a journey to become a Backend Developer! 💻</p>
+    <p>I work, I train, and I study programming late at night because I love it and I know where I want to go! 🎯</p>
+    <p>Currently learning: Python → Flask → SQL → more!</p>
+    <p>Dream: Work in tech internationally! 🌎✈️</p>
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="/" class="btn btn-primary">← Back to Home</a>
+    </div>
+    </div>
+    """
+
+# ========== PÁGINA DE PROJETOS ==========
+@app.route("/projects")
+def projects():
+    return """
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+     * { font-family: 'Chakra Petch', sans-serif; }
+     body { background-color: #f0f4ff; }
+    </style>
+
+    <div class="container py-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light rounded mb-4">
+      <div class="container-fluid">
+        <a class="nav-link d-inline me-3" href="/">🏠 Home</a>
+        <a class="nav-link d-inline" href="/about">👤 About Me</a>
+      </div>
+    </nav>
+
+    <h1 class="text-center text-primary display-4">My Projects</h1>
+    <hr class="my-4">
+
+    <div class="card p-4 shadow-sm mb-4">
+      <h5 class="card-title">🌐 #1: Learning Journey Website</h5>
+      <p class="card-text">This very site! Built with Flask, explaining programming basics.</p>
+      <span class="badge bg-primary">Flask</span>
+      <span class="badge bg-success">Python</span>
+      <span class="badge bg-info">HTML/CSS</span>
+    </div>
+
+    <div class="card p-4 shadow-sm mb-4">
+      <h5 class="card-title">🚧 #2: Coming Soon...</h5>
+      <p class="card-text">Next project in development! Ideas: to-do list, login system, calculator...</p>
+      <span class="badge bg-warning text-dark">In Progress</span>
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="/" class="btn btn-primary">← Back to Home</a>
+    </div>
     </div>
     """
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
